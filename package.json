@@ -1,5 +1,5 @@
 {
-  "name": "@acquire/boilerplate",
+  "name": "@bedunkevich/boilerplate",
   "version": "1.0.0",
   "description": "Acquire package boilerplate",
   "main": "lib/index.js",
