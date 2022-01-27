@@ -18,11 +18,18 @@
   "files": [
     "lib/**/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bedunkevich/acquire-boilerplate"
+  },
   "keywords": [
     "Acquire"
   ],
   "author": "Stanislav Bedunkevich",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bedunkevich/acquire-boilerplate/issues"
+  },
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "jest": "^27.4.7",
