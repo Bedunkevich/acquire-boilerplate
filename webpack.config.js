@@ -1,25 +1,27 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const port = 3333;
+
 module.exports = ({ WEBPACK_SERVE }) => {
   const isEnvDevelopment = Boolean(WEBPACK_SERVE);
 
   return {
-    entry: isEnvDevelopment ? './src/index' : './src/lib/index',
+    entry: isEnvDevelopment ? './src/index' : { lib: './src/lib/index', widget: './src/widget/index' },
     mode: 'development',
     target: 'web',
     devServer: {
       static: {
         directory: path.join(__dirname, 'dist'),
       },
-      port: 3001,
+      port,
     },
     devtool: 'source-map',
     output: {
       clean: true,
       publicPath: 'auto',
-      path: path.resolve(__dirname, 'lib', 'bundle'),
-      filename: 'index.js',
+      path: path.resolve(__dirname, 'dist', 'bundle'),
+      filename: '[name].js',
       library: 'Acquire',
       libraryTarget: 'umd',
       umdNamedDefine: true,
