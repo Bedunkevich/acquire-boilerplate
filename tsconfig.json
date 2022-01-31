@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "target": "es5",
-    "module": "commonjs",
+    "jsx": "react-jsx",
+    "lib": ["dom", "es5", "esnext"],
     "declaration": true,
+    "moduleResolution": "node",
     "outDir": "./lib",
-    "strict": true,
+    "strict": true
   },
-  "include": ["src"],
+  "include": ["src/lib"],
   "exclude": ["node_modules", "**/__tests__/*"]
 }
