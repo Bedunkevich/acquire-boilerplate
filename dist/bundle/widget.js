@@ -781,11 +781,14 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var ChatContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  position: fixed;\n  right: 10px;\n  bottom: 10px;\n"])));
-var ActionButton = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  width: 20px;\n  height: 20px;\n  background: red;\n  color: white;\n  cursor: pointer;\n"])));
+var ActionButton = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  width: 50px;\n  height: 50px;\n  background: red;\n  color: white;\n  cursor: pointer;\n"])));
 var Chat = function Chat(_ref) {
   var clientID = _ref.clientID;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(ChatContainer, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(ActionButton, {
+      onClick: function onClick() {
+        return alert("Hi, ".concat(clientID));
+      },
       children: "Click Me"
     })
   });
@@ -32610,6 +32613,7 @@ var __webpack_exports__ = {};
   \******************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createInstance": () => (/* binding */ createInstance),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
@@ -32655,7 +32659,13 @@ function Widget() {
   };
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Widget);
+function createInstance(o) {
+  return Object.create(Widget());
+}
+
+var instance = createInstance({});
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (instance);
 })();
 
 /******/ 	return __webpack_exports__;
