@@ -28,3 +28,8 @@ export const Button: FC<ButtonProps> = ({ title, onClick }) => {
     </StyledButton>
   );
 };
+
+export default {
+  Greeter,
+  Button,
+};

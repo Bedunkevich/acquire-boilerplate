@@ -5,4 +5,8 @@ declare type ButtonProps = {
     onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 export declare const Button: FC<ButtonProps>;
-export {};
+declare const _default: {
+    Greeter: (name: string) => string;
+    Button: FC<ButtonProps>;
+};
+export default _default;

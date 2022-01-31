@@ -5,7 +5,7 @@ module.exports = ({ WEBPACK_SERVE }) => {
   const isEnvDevelopment = Boolean(WEBPACK_SERVE);
 
   return {
-    entry: './src/index',
+    entry: isEnvDevelopment ? './src/index' : './src/lib/index',
     mode: 'development',
     target: 'web',
     devServer: {
@@ -19,7 +19,7 @@ module.exports = ({ WEBPACK_SERVE }) => {
       clean: true,
       publicPath: 'auto',
       path: path.resolve(__dirname, 'lib', 'bundle'),
-      filename: 'bundle.js',
+      filename: 'index.js',
       library: 'Acquire',
       libraryTarget: 'umd',
       umdNamedDefine: true,

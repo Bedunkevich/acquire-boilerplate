@@ -1,6 +1,6 @@
 {
   "name": "@bedunkevich/boilerplate",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Acquire package boilerplate for the package",
   "main": "lib/cjs/index.js",
   "jsnext:main": "lib/esnext/index.js",
