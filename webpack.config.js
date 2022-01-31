@@ -12,7 +12,7 @@ module.exports = ({ WEBPACK_SERVE }) => {
     target: 'web',
     devServer: {
       static: {
-        directory: path.join(__dirname, 'dist'),
+        directory: path.join(__dirname, 'lib'),
       },
       port,
     },
@@ -20,7 +20,7 @@ module.exports = ({ WEBPACK_SERVE }) => {
     output: {
       clean: true,
       publicPath: 'auto',
-      path: path.resolve(__dirname, 'dist', 'bundle'),
+      path: path.resolve(__dirname, 'lib', 'bundle'),
       filename: '[name].js',
       library: 'Acquire',
       libraryTarget: 'umd',
