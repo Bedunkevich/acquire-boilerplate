@@ -1,13 +1,14 @@
 {
   "name": "@bedunkevich/boilerplate",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Acquire package boilerplate for the package",
   "main": "lib/cjs/index.js",
   "jsnext:main": "lib/esnext/index.js",
   "module": "lib/esnext/index.js",
   "types": "lib/cjs/index.d.ts",
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esnext",
+    "build": "yarn build:cjs && yarn build:esnext && yarn build:bundle",
+    "build:bundle": "webpack",
     "build:cjs": "tsc -t es3 -m commonjs --outDir lib/cjs",
     "build:esnext": "tsc -t esnext -m esnext --outDir lib/esnext",
     "start": "webpack serve",
