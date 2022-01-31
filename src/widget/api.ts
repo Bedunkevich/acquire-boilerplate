@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-function API() {
+function API({ sessionID }: { sessionID: string }) {
   const socket = io('https://kpcdg8.acq.lc:2930', {
     reconnectionDelayMax: 10000,
     path: '/api/v1/crm/ws',
@@ -9,7 +9,7 @@ function API() {
     },
     transports: ['websocket'],
     query: {
-      '-session-id': '7954615554',
+      '-session-id': sessionID,
       '-tab-id': '69871',
       '-x-user-type': 'user',
       '-contact-id': null,
@@ -55,12 +55,6 @@ function API() {
   function connect() {
     console.log('%c[API]', 'color: green;');
   }
-
-  return {
-    connect,
-  };
 }
 
-const instance = API();
-
-export default instance;
+export default API;

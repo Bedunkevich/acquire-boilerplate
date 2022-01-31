@@ -8,7 +8,6 @@ type WidgetProps = {
 
 function Widget() {
   let config;
-  API.connect();
 
   function init(props: WidgetProps) {
     if (typeof props !== 'object') {
@@ -24,6 +23,8 @@ function Widget() {
     const rootId = `acquite-widget-${clientID}`;
     const rootDiv = document.createElement(rootId);
     const container = document.body.appendChild(rootDiv);
+
+    new API({ sessionID: clientID });
 
     render(<Chat clientID={clientID} />, container);
   }
