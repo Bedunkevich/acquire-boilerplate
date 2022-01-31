@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FC, useState } from 'react';
 import styled from 'styled-components';
 
 export const Greeter = (name: string) => `Hello ${name}`;
@@ -14,8 +14,8 @@ const StyledButton = styled.button`
   color: white;
 `;
 
-export const Button: React.FC<ButtonProps> = ({ title, onClick }) => {
-  const [counter, setCounter] = React.useState(1);
+export const Button: FC<ButtonProps> = ({ title, onClick }) => {
+  const [counter, setCounter] = useState(1);
 
   return (
     <StyledButton
