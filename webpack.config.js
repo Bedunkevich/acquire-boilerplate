@@ -24,6 +24,8 @@ module.exports = ({ WEBPACK_SERVE }) => {
       filename: '[name].js',
       library: 'Acquire',
       libraryTarget: 'umd',
+      libraryExport: 'default',
+      globalObject: 'this',
       umdNamedDefine: true,
     },
     resolve: {

@@ -1,5 +1,6 @@
 import { render } from 'react-dom';
 import { Chat } from './chat';
+import API from './api';
 
 type WidgetProps = {
   clientID: string;
@@ -7,6 +8,7 @@ type WidgetProps = {
 
 function Widget() {
   let config;
+  API.connect();
 
   function init(props: WidgetProps) {
     if (typeof props !== 'object') {
@@ -30,11 +32,11 @@ function Widget() {
     init,
   };
 }
-function createInstance(o): ReturnType<typeof Widget> {
+function createInstance(): ReturnType<typeof Widget> {
   return Object.create(Widget());
 }
 
-const instance = createInstance({});
+const instance = createInstance();
 
 export { createInstance };
 export default instance;
